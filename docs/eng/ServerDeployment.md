@@ -61,7 +61,7 @@ We went in, turned it on, and chose the IP of our PC. Saved the settings.
 ### Step 4. Server Setup
 
 Have the ports been unblocked? Cool. Now we need to configure the server.
-Everything is simple here, download [Grasscutter](https://github.com/Grasscutter/Grasscutter ), follow the guide
+Everything is simple here, download [Grasscutter](https://github.com/Grasscutter/Grasscutter), follow the guide
 to start the server (it's enough to just start and not get an error). Then the most
 interesting thing begins.
 Go to the folder with the server, find the config.json file. Open it with any editor and look for the parameter

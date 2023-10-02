@@ -25,15 +25,14 @@ We need to get the source apk from this launcher. There are two ways:
 
 1. From this repository, if it is possible to download it
 2. Download the Genshin Impact 4.0 client (I don't know where to look)
-3. Download [YuukiPS launcher for Android](https://ps.yuuki.me/game/genshin-impact ). Downloaded apk
-   we unpack it as a zip archive and there will be a source apk along the assets/lspatch/modules/
-   path
+3. Download [YuukiPS launcher for Android](https://ps.yuuki.me/game/genshin-impact). Downloaded apk
+   we unpack it as a zip archive and there will be a source apk along the assets/lspatch/modules/path
 
 ### Patching tools
 
 Found it? Great. Now we need to make our own patch. To do this, we
-download [Spatch](https://github.com/LSPosed/LSPatch )
-and [Shizuku](https://github.com/RikkaApps/Shizuku ). You can download them in the Releases section.
+download [Spatch](https://github.com/LSPosed/LSPatch)
+and [Shizuku](https://github.com/RikkaApps/Shizuku). You can download them in the Releases section.
 Downloaded, installed on a smartphone (or assembled themselves), cool.
 
 ### Creating a patch
@@ -55,7 +54,7 @@ are two options
 
 1. We are trying to assemble everything without Android Studio and use third-party guides (not the
    best option)
-2. Just download Android Studio (https://developer.android.com/studio ), install and open
+2. Just download [Android Studio](https://developer.android.com/studio), install and open
    the unpacked archive in it
 
 Further instructions for assembly via **Android Studio!**. There are two build options:
@@ -87,7 +86,7 @@ triangle)
 ### Patching
 
 We need to install the prepared APK,
-and [activate Shizuku](https://doc.yuuki.me/docs/tutorial-patch/android ).
+and [activate Shizuku](https://doc.yuuki.me/docs/tutorial-patch/android).
 Activated, patch LSPatch as Local, not Integrated (with Local you can quickly change the patch).
 Patched, reinstalled. Next, activate our module for the patched game.
 
