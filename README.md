@@ -22,7 +22,7 @@ Stable 1.0
 
 Гайд неполный. Если вам что-то непонятно - пишите, я постраюсь в кратчайшие сроки дополнить.
 Сам гайд рассчитан на понимающих людей, если вы пришли сюда за клиентом для
-Android - [вот он](). [Гайд для замены сервера](/docs/ru/ConnectionAndroid.md)
+Android - [вот он](https://github.com/ZhevlakovII/GIModule/releases/download/1.0/GI_patched.apk). [Гайд для замены сервера](/docs/ru/ConnectionAndroid.md)
 
 ## Гайд
 
@@ -52,7 +52,7 @@ If you want to fix it - please create a PR or email me at TG @izhXX1337
 The guide is incomplete. If you don't understand something, write to me, I will try to supplement it
 as soon as possible.
 The guide itself is designed for understanding people, if you came here for a client for
-Android - [here it is](). [Guide for replacing the server](/docs/eng/ConnectionAndroid.md)
+Android - [here it is](https://github.com/ZhevlakovII/GIModule/releases/download/1.0/GI_patched.apk). [Guide for replacing the server](/docs/eng/ConnectionAndroid.md)
 
 ## Guide
 
