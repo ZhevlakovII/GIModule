@@ -2,20 +2,17 @@
 #FKING KTS
 #Maybe fix later
 [versions]
-#agp = "8.3.0-alpha06" #alpha not today
 agp = "8.0.2"
-kotlin = "1.9.0" #right
-core-ktx = "1.12.0" #maybe need later
+kotlin = "1.9.0"
 ezx = "0.9.2"
+xposed = "82"
+xposed-sources = "82:sources"
 
 [libraries]
-xposed = { group = "de.robv.android.xposed", name = "api:82" } #version.ref not found :D
-xposed-sources = { group = "de.robv.android.xposed", name = "api:82:sources" }
+xposed = { group = "de.robv.android.xposed", name = "api", version.ref = "xposed" }
+xposed-sources = { group = "de.robv.android.xposed", name = "api", version.ref = "xposed-sources" }
 ezxhelper = { group = "com.github.kyuubiran", name = "EzXHelper", version.ref = "ezx" }
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
-

@@ -6,16 +6,13 @@ plugins {
 
 android {
     namespace = "ru.izhxx.gimodule"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "ru.izhxx.gimodule"
         minSdk = 28
-        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -38,9 +35,12 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("lib*.so"))))
-    implementation(libs.core.ktx)
     implementation(libs.ezxhelper)
 
+    //i don't know how connect jars in gradle.kts :(
+    //but if need, i save xposed jars
+//    compileOnly(fileTree("$projectDir/xposed-module/api-82.jar"))
+//    compileOnly(fileTree("$projectDir/xposed-module/api-82-sources.jar"))
     compileOnly(libs.xposed)
     compileOnly(libs.xposed.sources)
 }
