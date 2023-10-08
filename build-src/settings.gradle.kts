@@ -1,15 +1,9 @@
-@file:Suppress("DEPRECATION", "UnstableApiUsage")
-
-rootProject.name = "GIModule"
+@file:Suppress("UnstableApiUsage")
 
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 pluginManagement {
-    includeBuild("build-src")
-
     repositories {
-        //noinspection JcenterRepositoryObsolete
-        jcenter()
         google()
         gradlePluginPortal()
         maven("https://jitpack.io")
@@ -18,14 +12,20 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        //noinspection JcenterRepositoryObsolete
-        jcenter()
         google()
-        mavenCentral()
+        gradlePluginPortal()
         maven("https://jitpack.io")
+    }
+
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
     }
 }
 
+rootProject.name = "build-src"
+
 include(
-    ":app"
+    ":plugins"
 )
