@@ -17,8 +17,8 @@ internal object Hook {
     private const val ACTIVITY_ON_CREATE_NAME: String = "onCreate"
 
     //hardcoded cuz need open only current file
-    private const val FILE_PATH: String =
-        "/storage/emulated/0/Android/obb/com.yuuki.gi40cn/server.txt"
+    private val FILE_PATH: String = BuildConfig.FILE_PATH
+//        "/storage/emulated/0/Android/obb/com.yuuki.gi40cn/server.txt"
 
     private val trustMeAlready: TrustMeAlready = TrustMeAlready()
     private val sslInject: SSLInject = SSLInject()

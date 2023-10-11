@@ -27,5 +27,6 @@ dependencyResolutionManagement {
 }
 
 include(
-    ":app"
+    ":app",
+    ":editor"
 )

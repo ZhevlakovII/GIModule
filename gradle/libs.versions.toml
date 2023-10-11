@@ -11,9 +11,11 @@ kotlin-coroutines = "1.7.3"
 #Serialization
 serialization-json = "1.6.0"
 
-#Android
-appcompat = "1.6.1"
+#Ktx
 ktx-activity = "1.8.0"
+
+#Material
+material = "1.10.0"
 
 #Lifecycle
 lifecycle = "2.6.2"
@@ -39,11 +41,11 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
 
 #Serialization
-kotlin-serialization-gradle = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
 kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization-json" }
 
-#Android
-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+#Material
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # Lifecycle
 lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
