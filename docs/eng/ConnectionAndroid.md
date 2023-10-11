@@ -93,7 +93,7 @@ Patched, reinstalled. Next, activate our module for the patched game.
 ### Launch
 
 So, we patched and installed everything. But we won't be able to play that easily. There is
-a file for selecting a server server.txt , which is located on the Android/obb path/**Package name,
+a file for selecting a server server.txt , which is located on the Android/media/**Package name,
 for example com.yuuki.gi40cn
 or com.miHoYo.GenshinImpact**.
 
@@ -107,6 +107,8 @@ We downloaded the resources, then find the file and enter a single line
 of the format into it http://127.0.0.1:2222 (if you use IP) or https://domain.com
 http or https - it doesn't matter (it depends on your server settings), the main thing is that there
 is one in the file a line with your server, otherwise you will go to YuukiPS.
+**New information**
+Now you can use editor.apk to modify the server. Before using, log into the game and download the resources.
 
 After these manipulations, you will be able to log in to your server.
 
