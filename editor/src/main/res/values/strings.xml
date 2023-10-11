@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GI Editor</string>
+
+    <string name="empty_screen_title">Servers not found</string>
+    <string name="empty_screen_subtitle">Add your first server!</string>
+    <string name="empty_screen_button_text">Add server</string>
+
+    <string name="loading_screen_title">Loading</string>
+    <string name="loading_screen_subtitle">Please, wait…</string>
+
+    <string name="enter_screen_name_label">Enter the server name</string>
+    <string name="enter_screen_url_label">Enter the server url</string>
+    <string name="enter_screen_button_add_text">Add server</string>
+    <string name="enter_screen_button_close_text">Close</string>
+    <string name="enter_screen_input_error">Url is incorrect. Please update url</string>
+
+    <string name="write_success">Success write server!</string>
+    <string name="write_error">Error when write server</string>
+
+    <string name="permission_not_granted">Permission isn\'t granted. If you don\'t granted - app can\'t write server to a local storage</string>
+</resources>
