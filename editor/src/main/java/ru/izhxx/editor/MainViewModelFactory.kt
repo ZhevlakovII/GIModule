@@ -3,7 +3,7 @@ package ru.izhxx.editor
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import ru.izhxx.editor.data.converter.ServerConverter
-import ru.izhxx.editor.data.prefs.PreferenceManager
+import ru.izhxx.editor.data.prefs.string.StringPreferencesImpl
 import ru.izhxx.editor.data.repository.ServersDataRepositoryImpl
 import ru.izhxx.editor.domain.repository.ServersDataRepository
 import ru.izhxx.editor.domain.repository.WriterRepository
@@ -17,7 +17,10 @@ internal class MainViewModelFactory(
     companion object {
         fun getFactory(): MainViewModelFactory {
             return MainViewModelFactory(
-                ServersDataRepositoryImpl(PreferenceManager.getInstance(), ServerConverter()),
+                ServersDataRepositoryImpl(
+                    StringPreferencesImpl(EditorApplication.getInstance().getPreferenceManager()),
+                    ServerConverter()
+                ),
                 EditorApplication.getInstance().getWriterRepository()
             )
         }

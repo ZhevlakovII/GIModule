@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 
-internal class PreferenceManager(context: Context) {
+internal class PreferenceManager private constructor(context: Context) {
 
     private val prefs: SharedPreferences =
         context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
@@ -14,17 +14,8 @@ internal class PreferenceManager(context: Context) {
 
         private val synchronizer = Any()
 
-        @Volatile
-        private var instance: PreferenceManager? = null
-
-        fun getInstance(): PreferenceManager = synchronized(synchronizer) {
-            return@synchronized requireNotNull(instance) {
-                "PreferenceManager isn't initialize. Check init method"
-            }
-        }
-
-        fun init(context: Context) {
-            instance = PreferenceManager(context)
+        fun init(context: Context): PreferenceManager = synchronized(synchronizer) {
+            return@synchronized PreferenceManager(context)
         }
     }
 

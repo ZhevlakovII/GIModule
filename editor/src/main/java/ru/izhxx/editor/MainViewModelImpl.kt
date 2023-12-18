@@ -3,11 +3,13 @@ package ru.izhxx.editor
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import ru.izhxx.editor.domain.model.Server
 import ru.izhxx.editor.domain.repository.ServersDataRepository
 import ru.izhxx.editor.domain.repository.WriterRepository
+import ru.izhxx.editor.domain.util.OperationResult
 import ru.izhxx.editor.presenter.model.MainScreenState
 import ru.izhxx.editor.utils.ipRegex
 import ru.izhxx.editor.utils.urlRegex
@@ -31,7 +33,7 @@ internal class MainViewModelImpl(
 
     override fun onStop() {
         viewModelScope.launch {
-            serversDataRepository.saveToStorage()
+            serversDataRepository.writeServers()
         }
     }
 
@@ -52,15 +54,20 @@ internal class MainViewModelImpl(
     }
 
     override fun itemsScreenOnItemClick(position: Int) {
-        viewModelScope.launch {
-            selectedServer = serversDataRepository.selectServer(position)
+        viewModelScope.launch(Dispatchers.IO) {
+            serversDataRepository.getServerByPosition(position)
+                .collect({
+                    selectedServer = it
+                }, {
+                    setErrorState(it)
+                })
         }
     }
 
     override fun inputScreenOnButtonAddClick(name: String, url: String) {
         if (isCorrectInput(url)) {
             viewModelScope.launch {
-                serversDataRepository.addServer(Server(name, url))
+                serversDataRepository.saveServer(Server(name, url))
                 fetchServers()
                 clearInputState()
             }
@@ -84,12 +91,16 @@ internal class MainViewModelImpl(
 
     private fun fetchServers() {
         viewModelScope.launch {
-            val serversData = serversDataRepository.getServersData()
-            if (serversData.isNotEmpty()) {
-                state.value = MainScreenState.WithItems(serversData)
-            } else {
-                state.value = MainScreenState.Empty
-            }
+            serversDataRepository.getSavedServers()
+                .collect({
+                    if (it.isNotEmpty()) {
+                        state.value = MainScreenState.WithItems(it)
+                    } else {
+                        state.value = MainScreenState.Empty
+                    }
+                }, {
+                    setErrorState(it)
+                })
         }
     }
 
@@ -118,5 +129,9 @@ internal class MainViewModelImpl(
                 false
             }
         }
+    }
+
+    private fun setErrorState(error: OperationResult.Error<*>) {
+        state.value = MainScreenState.Empty
     }
 }

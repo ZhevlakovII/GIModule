@@ -8,6 +8,7 @@ import ru.izhxx.editor.domain.repository.WriterRepository
 internal class EditorApplication : Application() {
 
     private var writerRepository: WriterRepository? = null
+    private var preferenceManager: PreferenceManager? = null
 
     companion object {
         @Volatile
@@ -15,7 +16,7 @@ internal class EditorApplication : Application() {
 
         @JvmStatic
         fun getInstance(): EditorApplication = requireNotNull(instance) {
-            "Arr, EditorApplication isn't initialize. Method getInstance()"
+            "Arr, EditorApplication isn't initialize\n" + "EditorApplication#getInstance()"
         }
     }
 
@@ -23,11 +24,16 @@ internal class EditorApplication : Application() {
         super.onCreate()
 
         writerRepository = WriterRepositoryImpl(applicationContext)
-        PreferenceManager.init(applicationContext)
+        preferenceManager = PreferenceManager.init(applicationContext)
         instance = this
     }
 
     fun getWriterRepository(): WriterRepository = requireNotNull(writerRepository) {
-        "Arr, writerRepository isn't create! Class EditorApplication, method getWriterRepository"
+        "Arr, writerRepository isn't create! Class EditorApplication, method getWriterRepository\n" +
+                "EditorApplication#getWriterRepository()"
+    }
+
+    fun getPreferenceManager(): PreferenceManager = requireNotNull(preferenceManager) {
+        "PreferenceManager isn't initialize\n" + "EditorApplication#getPreferenceManager()"
     }
 }
